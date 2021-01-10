@@ -10,16 +10,33 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:coMemories.helloWorld"
+		"onCommand:coMemories.saveCrystal",
+		"onCommand:coMemories.useCrystal"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "coMemories.helloWorld",
-				"title": "Crystal Of Memories"
+				"command": "coMemories.saveCrystal",
+				"title": "Save Crystal Location"
+			},
+			{
+				"command": "coMemories.useCrystal",
+				"title": "Go to Crystal Location"
 			}
-		]
+		],
+			"keybindings": [
+				{
+					"command": "coMemories.saveCrystal",
+					"key": "ctrl+shift+C ctrl+shift+S",
+					"mac": "cmd+shift+C cmd+shift+S"
+				},
+				{
+					"command": "coMemories.useCrystal",
+					"key": "ctrl+shift+C ctrl+shift+L",
+					"mac": "cmd+shift+C cmd+shift+L"
+				}
+			]
 	},
 	"scripts": {
 		"lint": "eslint .",
